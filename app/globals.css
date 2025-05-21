@@ -1,0 +1,100 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 260, 50%, 98%;
+  --foreground: 260, 50%, 20%;
+
+  --card: 260, 50%, 99%;
+  --card-foreground: 260, 50%, 20%;
+
+  --primary: 265, 89%, 70%;
+  --primary-foreground: 0, 0%, 100%;
+
+  --secondary: 260, 50%, 90%;
+  --secondary-foreground: 260, 50%, 20%;
+
+  --accent: 45, 100%, 50%;
+  --accent-foreground: 0, 0%, 0%;
+
+  --muted: 260, 50%, 95%;
+  --muted-foreground: 260, 50%, 40%;
+
+  --border: 260, 50%, 85%;
+  --input: 260, 50%, 85%;
+  --ring: 260, 50%, 70%;
+
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: 260, 30%, 5%;
+  --foreground: 250, 10%, 95%;
+
+  --card: 260, 30%, 8%;
+  --card-foreground: 250, 10%, 95%;
+
+  --primary: 265, 89%, 78%;
+  --primary-foreground: 0, 0%, 100%;
+
+  --secondary: 260, 30%, 15%;
+  --secondary-foreground: 0, 0%, 100%;
+
+  --muted: 260, 30%, 10%;
+  --muted-foreground: 250, 10%, 70%;
+
+  --accent: 45, 100%, 60%;
+  --accent-foreground: 0, 0%, 0%;
+
+  --border: 260, 30%, 15%;
+  --input: 260, 30%, 15%;
+  --ring: 250, 10%, 70%;
+
+  --radius: 0.5rem;
+}
+
+/* Theme transition */
+*,
+*::before,
+*::after {
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter,
+    backdrop-filter;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 300ms;
+}
+
+/* Disable transitions on theme toggle button to prevent flicker */
+.theme-toggle-button {
+  transition: transform 200ms ease;
+}
+
+body {
+  @apply bg-violet-50 text-violet-950 dark:bg-violet-950 dark:text-violet-50;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-violet-100 dark:bg-violet-900;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-violet-500 dark:bg-violet-700 rounded;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-violet-600 dark:bg-violet-600;
+}
+
+/* Glass morphism */
+.glass {
+  @apply bg-white/20 dark:bg-violet-950/30 backdrop-blur-md border border-white/30 dark:border-violet-800/30;
+}

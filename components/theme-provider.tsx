@@ -1,9 +1,9 @@
 "use client"
 import { ThemeProvider as NextThemesProvider } from "next-themes"
-import type { ThemeProviderProps } from "next-themes"
+import { type ComponentProps } from "react"
 import { useState, useEffect } from "react"
 
-export function ThemeProvider({ children, ...props }: ThemeProviderProps) {
+export function ThemeProvider({ children, ...props }: ComponentProps<typeof NextThemesProvider>) {
   const [mounted, setMounted] = useState(false)
 
   // Add a class to the body when the theme provider is mounted
